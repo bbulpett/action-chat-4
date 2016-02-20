@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   
+  get 'rooms/show'
+
   get  'onboarding' => 'onboarding#index'
   post 'onboarding' => 'onboarding#continue'
     
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   mount Hello::Engine => "/hello"
-  root to: 'root#index'
+  root to: 'rooms#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Serve websocket cable requests in-process
