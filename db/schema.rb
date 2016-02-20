@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220155750) do
+ActiveRecord::Schema.define(version: 20160220165757) do
 
   create_table "accesses", force: :cascade do |t|
     t.integer  "user_id"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 20160220155750) do
   end
 
   add_index "credentials", ["user_id"], name: "index_credentials_on_user_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at"
